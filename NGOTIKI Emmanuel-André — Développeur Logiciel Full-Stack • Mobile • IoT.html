@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NGOTIKI Emmanuel-André — Développeur Logiciel Full-Stack • Mobile • IoT</title>
+<meta name="description" content="Portfolio de NGOTIKI Emmanuel-André, finaliste en Génie Logiciel au CFI-CIRAS (Brazzaville) : web, mobile et IoT.">
+<meta property="og:title" content="NGOTIKI Emmanuel-André — Développeur Logiciel">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070b16;--bg2:#0d1424;--card:#101a2e;--line:#1e2b45;--tx:#eae8e1;--mut:#93a0b8;--g:#3ddc97;--c:#38d5f0;--pt:env(safe-area-inset-top,0px);box-sizing:border-box;padding-top:var(--pt);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+*,*:before,*:after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px));height:auto}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.65 Manrope,Inter,system-ui,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:auto;padding:0 22px}
+section{padding:96px 0}
+.alt{background:var(--bg2)}
+h1,h2,h3{line-height:1.15;margin:0}
+h2{font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:12px}
+.eyebrow{color:var(--g);font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;margin-bottom:10px}
+.sub{color:var(--mut);max-width:640px;margin:0 0 44px}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--g),var(--c));z-index:100}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(7,11,22,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-weight:800;letter-spacing:-.01em}.logo b{color:var(--g)}
+.links{display:flex;gap:26px;align-items:center;font-size:14px;color:var(--mut)}
+.links a:hover{color:var(--tx)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 22px;border-radius:999px;font-weight:700;font-size:14px;border:1px solid var(--line);transition:transform .2s,box-shadow .2s,background .2s;cursor:pointer;color:var(--tx);background:transparent;font-family:inherit}
+.btn:hover{transform:translateY(-2px)}
+.btn.p{background:var(--g);color:#05110c;border-color:var(--g)}.btn.p:hover{box-shadow:0 8px 28px rgba(61,220,151,.28)}
+.btn.s{padding:0 16px;min-height:38px;font-size:13px}
+#burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer;position:relative}
+#burger i{position:absolute;left:10px;width:24px;height:2px;background:var(--tx);transition:.3s}
+#burger i:nth-child(1){top:15px}#burger i:nth-child(2){top:21px}#burger i:nth-child(3){top:27px}
+#burger.o i:nth-child(1){top:21px;transform:rotate(45deg)}#burger.o i:nth-child(2){opacity:0}#burger.o i:nth-child(3){top:21px;transform:rotate(-45deg)}
+.hero{padding:90px 0 80px;position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(800px 400px at 85% 10%,rgba(56,213,240,.10),transparent),radial-gradient(700px 400px at 0 0,rgba(61,220,151,.08),transparent)}
+.hero:before,.hero:after{content:"";position:absolute;z-index:-1;width:320px;height:320px;border-radius:50%;filter:blur(90px);opacity:.16;pointer-events:none;animation:drift 14s ease-in-out infinite alternate}
+.hero:before{top:8%;right:8%;background:var(--c)}.hero:after{bottom:2%;left:6%;background:var(--g);animation-delay:-7s}
+.hgrid{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}
+.badge{display:inline-block;padding:6px 14px;border:1px solid rgba(61,220,151,.4);color:var(--g);border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.12em;margin-bottom:22px}
+h1{font-size:clamp(38px,6.4vw,72px);font-weight:800;letter-spacing:-.03em}
+h1 span{background:linear-gradient(110deg,var(--g),var(--c),var(--g));background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gradientFlow 8s ease-in-out infinite}
+.role{font-size:clamp(16px,2vw,20px);color:var(--c);font-weight:600;margin:16px 0 18px}
+.hero p.lead{color:var(--mut);max-width:560px}
+.quote{font-style:italic;color:var(--tx);border-left:2px solid var(--g);padding-left:14px;margin:22px 0 28px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.visual{position:relative;aspect-ratio:1;max-width:400px;margin:auto;width:100%}
+.visual .ring{position:absolute;inset:0;border-radius:50%;border:1px dashed var(--line);animation:spin 40s linear infinite}
+.visual .core{position:absolute;inset:14%;overflow:hidden;border-radius:50%;background:linear-gradient(160deg,#13213b,#0a1222);border:1px solid var(--line);display:grid;place-items:center;font-size:clamp(46px,9vw,84px);font-weight:800;color:var(--g);letter-spacing:-.04em;box-shadow:0 0 60px rgba(61,220,151,.08);animation:corePulse 5s ease-in-out infinite}
+.portrait{width:100%;height:100%;object-fit:cover;object-position:center 32%;border-radius:50%}
+.portrait-fallback{position:absolute}
+.chip{position:absolute;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:7px 12px;font:600 12px/1 ui-monospace,Menlo,monospace;color:var(--c);animation:fl 5s ease-in-out infinite}
+.chip:nth-of-type(3){top:6%;left:4%}.chip:nth-of-type(4){top:18%;right:-2%;animation-delay:-1s;color:var(--g)}.chip:nth-of-type(5){bottom:14%;left:-2%;animation-delay:-2s}.chip:nth-of-type(6){bottom:4%;right:8%;animation-delay:-3s;color:var(--g)}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes fl{50%{transform:translateY(-8px)}}
+@keyframes drift{to{transform:translate3d(28px,-24px,0) scale(1.12)}}
+@keyframes gradientFlow{50%{background-position:100% 50%}}
+@keyframes corePulse{50%{box-shadow:0 0 78px rgba(61,220,151,.18);transform:scale(1.025)}}
+.stats{display:flex;gap:40px;margin-top:44px;flex-wrap:wrap}
+.stats b{display:block;font-size:34px;font-weight:800;color:var(--tx)}.stats span{font-size:13px;color:var(--mut)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.pill{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-top:14px}
+.pill h3{font-size:14px;color:var(--g);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
+.pill p{margin:0;color:var(--mut);font-size:15px}
+.tl{list-style:none;margin:0;padding:0 0 0 22px;border-left:1px solid var(--line)}
+.tl li{position:relative;padding:0 0 26px 18px}
+.tl li:before{content:"";position:absolute;left:-28px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--g)}
+.tl b{color:var(--c);display:block;font-size:14px}.tl span{color:var(--mut);font-size:15px}
+.grid{display:grid;gap:18px}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g2{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;transition:transform .35s cubic-bezier(.2,.75,.25,1),border-color .35s,box-shadow .35s}
+.card:hover{transform:translateY(-5px);border-color:rgba(61,220,151,.5);box-shadow:0 18px 42px rgba(0,0,0,.2),0 0 24px rgba(61,220,151,.06)}
+.card h3{font-size:16px;margin-bottom:14px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-size:12.5px;padding:5px 11px;border-radius:8px;background:rgba(56,213,240,.07);border:1px solid rgba(56,213,240,.18);color:#bfeaf3}
+.proj{display:grid;grid-template-columns:1fr 1fr;gap:0;overflow:hidden;padding:0;margin-bottom:22px}
+.proj:nth-child(even) .mock{order:2}
+.mock{min-height:300px;position:relative;display:grid;place-items:center;background:linear-gradient(135deg,var(--a),#0a1222)}
+.win{width:78%;background:rgba(7,11,22,.8);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:12px;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.win .dots{display:flex;gap:5px;margin-bottom:10px}.win .dots i{width:7px;height:7px;border-radius:50%;background:#33415f}
+.win .row{display:flex;gap:6px;align-items:flex-end;height:64px;margin-bottom:10px}
+.win .row i{flex:1;background:var(--a2);opacity:.85;border-radius:3px 3px 0 0;height:var(--h);transform:scaleY(.08);transform-origin:bottom;transition:transform .7s cubic-bezier(.2,.75,.25,1)}
+.proj.in .win .row i{transform:scaleY(1)}.proj.in .win .row i:nth-child(2){transition-delay:.08s}.proj.in .win .row i:nth-child(3){transition-delay:.16s}.proj.in .win .row i:nth-child(4){transition-delay:.24s}.proj.in .win .row i:nth-child(5){transition-delay:.32s}.proj.in .win .row i:nth-child(6){transition-delay:.4s}
+.win .ln{height:7px;border-radius:4px;background:#26344f;margin-top:6px}.win .ln:nth-child(odd){width:70%}
+.win .kv{display:flex;justify-content:space-between;font:600 11px ui-monospace,monospace;color:var(--a2)}
+.pbadge{position:absolute;top:16px;left:16px;font-size:11px;font-weight:700;letter-spacing:.08em;padding:5px 11px;border-radius:999px;background:rgba(7,11,22,.75);border:1px solid rgba(255,255,255,.18)}
+.pbody{padding:32px}
+.pnum{color:var(--g);font:700 13px ui-monospace,monospace}
+.pbody h3{font-size:28px;margin:6px 0 4px}.cat{color:var(--c);font-size:14px;font-weight:600;margin-bottom:12px}
+.pbody p{color:var(--mut);margin:0 0 12px;font-size:15px}.pbody p b{color:var(--tx)}
+.pbody .tags{margin:14px 0 20px}
+.small .card{padding:20px}.small h3{margin-bottom:6px}.small p{margin:0 0 10px;color:var(--mut);font-size:14px}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;position:relative}
+.steps:before{content:"";position:absolute;top:22px;left:0;height:2px;width:var(--p,0%);background:linear-gradient(90deg,var(--g),var(--c));transition:width .2s}
+.step{padding-top:52px;position:relative;border-top:2px solid var(--line)}
+.step i{position:absolute;top:-2px;left:0;font:700 14px ui-monospace,monospace;color:var(--g);font-style:normal;padding-top:14px}
+.step h3{font-size:17px;margin-bottom:6px}.step p{color:var(--mut);font-size:14px;margin:0}
+.big{padding:30px}.big h3{font-size:22px;color:var(--g);margin-bottom:8px}.big p{margin:0;color:var(--mut)}
+form{display:grid;gap:14px}
+input,textarea{width:100%;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;color:var(--tx);font:inherit}
+input:focus,textarea:focus{outline:2px solid var(--c);outline-offset:1px}
+textarea{min-height:130px;resize:vertical}
+.ct a{display:block;padding:12px 0;border-bottom:1px solid var(--line);color:var(--mut)}.ct a:hover{color:var(--g)}
+footer{border-top:1px solid var(--line);padding:40px 0;text-align:center;color:var(--mut);font-size:14px}
+footer b{color:var(--tx);display:block;font-size:16px}
+.rv{opacity:0;transform:translateY(26px);filter:blur(3px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.75,.25,1),filter .75s ease}.rv.in{opacity:1;transform:none;filter:none}
+.grid .rv:nth-child(2){transition-delay:.08s}.grid .rv:nth-child(3){transition-delay:.16s}.grid .rv:nth-child(4){transition-delay:.24s}
+.hero .hgrid>.rv:first-child{transition-delay:.06s}.hero .visual.rv{transition-delay:.2s}
+.btn{transition:transform .22s cubic-bezier(.2,.75,.25,1),box-shadow .25s,background .25s,border-color .25s}
+.tag{transition:transform .2s,border-color .2s,background .2s}.tag:hover{transform:translateY(-2px);border-color:rgba(56,213,240,.42);background:rgba(56,213,240,.12)}
+#cur{position:fixed;width:10px;height:10px;border-radius:50%;background:var(--g);pointer-events:none;z-index:200;opacity:0;transition:opacity .2s,transform .15s}
+@media(max-width:900px){
+ section{padding:70px 0}
+ .hgrid,.two,.proj{grid-template-columns:1fr}.proj:nth-child(even) .mock{order:0}
+ .g3,.g4{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr}.steps:before{display:none}
+ .step{padding:0 0 0 52px;border-top:0;border-left:2px solid var(--line)}.step i{top:0;left:-2px;padding:0 0 0 12px;background:var(--bg)}
+ .visual{max-width:300px}
+ #burger{display:block}
+ .links{position:absolute;top:68px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--bg);border-bottom:1px solid var(--line);max-height:0;overflow:hidden;transition:max-height .35s}
+ .links.o{max-height:480px}.links a{padding:15px 22px;border-top:1px solid var(--line)}.links .btn{margin:12px 22px}
+}
+@media(max-width:560px){.g2,.g3,.g4{grid-template-columns:1fr}.cta .btn{flex:1 1 100%}.pbody{padding:24px}}
+@media(hover:none){#cur{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none;filter:none}.win .row i{transform:none}}
+</style>
+</head>
+<body>
+<div id="bar"></div><div id="cur"></div>
+<nav><div class="wrap">
+ <a href="#top" class="logo">Emmanuel-<b>andré</b></a>
+ <button id="burger" aria-label="Ouvrir le menu" aria-expanded="false"><i></i><i></i><i></i></button>
+ <div class="links" id="links">
+  <a href="#top">Accueil</a><a href="#about">À propos</a><a href="#skills">Compétences</a><a href="#projects">Projets</a><a href="#path">Parcours</a><a href="#contact">Contact</a>
+    <a class="btn p s cv" href="Black%20Modern%20Professional%20Resume-2.pdf" download="CV-Emmanuel-Andre-Ngotiki.pdf">Télécharger mon CV</a>
+ </div>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+ <div class="hgrid">
+  <div class="rv">
+   <span class="badge">FINALISTE — CFI-CIRAS</span>
+   <h1>NGOTIKI <span>Emmanuel-andré</span></h1>
+   <div class="role">Développeur Logiciel • Full-Stack • Mobile • IoT</div>
+   <p class="lead">Étudiant finaliste en Génie Logiciel, je conçois des applications web et mobiles ainsi que des systèmes IoT capables de répondre à des problématiques concrètes dans les domaines de l'immobilier, de l'agriculture, de l'environnement et de la transformation numérique.</p>
+   <p class="quote">« Je transforme des idées et des problèmes réels en solutions numériques concrètes. »</p>
+    <div class="cta"><a class="btn p" href="#projects">Voir mes projets</a><a class="btn cv" href="Black%20Modern%20Professional%20Resume-2.pdf" download="CV-Emmanuel-Andre-Ngotiki.pdf">Télécharger mon CV</a><a class="btn" href="#contact">Me contacter</a></div>
+   <div class="stats">
+    <div><b data-n="4">0</b><span>projets phares</span></div>
+    <div><b data-n="6">0</b><span>autres réalisations</span></div>
+    <div><b data-n="3">0</b><span>domaines : Web, Mobile, IoT</span></div>
+   </div>
+  </div>
+  <div class="visual rv" aria-hidden="true">
+  <div class="ring"></div><div class="core"><img class="portrait" src="./photo-profil.png" alt="Portrait de NGOTIKI Emmanuel-André" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="portrait-fallback" hidden>EA</span></div>
+   <span class="chip">&lt;/code&gt;</span><span class="chip">ESP32</span><span class="chip">SELECT *</span><span class="chip">MQTT • Wi-Fi</span>
+  </div>
+ </div>
+</div></header>
+
+<section id="about"><div class="wrap two">
+ <div class="rv">
+  <div class="eyebrow">À propos</div><h2>À propos de moi</h2>
+  <p class="sub" style="margin-bottom:10px">Je suis étudiant finaliste en troisième année de Génie Logiciel au CFI-CIRAS. Mon parcours m'a permis de développer des compétences dans la conception et le développement de solutions numériques, notamment dans le développement web, mobile, les systèmes IoT et la gestion de données.</p>
+  <div class="pill"><h3>Approche</h3><p>Analyse du problème → conception → développement → tests → amélioration.</p></div>
+  <div class="pill"><h3>Objectif</h3><p>Créer des solutions utiles, accessibles et adaptées aux réalités locales.</p></div>
+  <div class="pill"><h3>Vision</h3><p>Utiliser la technologie pour répondre à des problématiques concrètes en République du Congo et en Afrique.</p></div>
+ </div>
+ <div class="rv" style="padding-top:20px">
+  <ul class="tl">
+   <li><b>2024</b><span>Formation informatique</span></li>
+   <li><b>2025</b><span>Développement de projets web/mobile</span></li>
+   <li><b>2025–2026</b><span>Projets IoT et systèmes connectés</span></li>
+   <li><b>2026</b><span>Finaliste en Génie Logiciel — CFI-CIRAS</span></li>
+  </ul>
+ </div>
+</div></section>
+
+<section id="skills" class="alt"><div class="wrap">
+ <div class="eyebrow rv">Compétences</div><h2 class="rv">Mes compétences</h2>
+ <p class="sub rv">Une base technique large, de l'interface au capteur.</p>
+ <div class="grid g3" id="skillGrid"></div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+ <div class="eyebrow rv">Projets</div><h2 class="rv">Mes projets</h2>
+ <p class="sub rv">Des projets conçus pour résoudre des problèmes concrets.</p>
+ <div id="projList"></div>
+
+ <h2 class="rv" style="font-size:26px;margin:70px 0 20px">Autres réalisations</h2>
+ <div class="grid g3 small" id="others"></div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+ <div class="eyebrow rv">Processus</div><h2 class="rv">Comment je transforme une idée en solution</h2>
+ <p class="sub rv"></p>
+ <div class="steps rv" id="steps">
+  <div class="step"><i>01</i><h3>Comprendre</h3><p>Analyse du problème et des besoins.</p></div>
+  <div class="step"><i>02</i><h3>Concevoir</h3><p>UML, Merise, architecture et interface.</p></div>
+  <div class="step"><i>03</i><h3>Développer</h3><p>Frontend, backend, base de données et intégration.</p></div>
+  <div class="step"><i>04</i><h3>Tester</h3><p>Tests fonctionnels, validation et correction.</p></div>
+  <div class="step"><i>05</i><h3>Déployer</h3><p>Mise en ligne et amélioration continue.</p></div>
+ </div>
+</div></section>
+
+<section id="path"><div class="wrap">
+ <div class="eyebrow rv">Parcours</div><h2 class="rv">Formation &amp; parcours</h2>
+ <div class="card rv" style="margin:26px 0 50px;border-color:rgba(61,220,151,.4)">
+  <h3 style="font-size:22px;margin-bottom:4px">CFI-CIRAS</h3>
+  <div style="color:var(--c);font-weight:600">Troisième année — Génie Logiciel</div>
+  <div style="color:var(--mut);margin-top:6px">Finaliste — 2026 · Les projets ci-dessus illustrent la mise en pratique de ces connaissances.</div>
+ </div>
+ <div class="grid g4">
+  <div class="card big rv"><h3>Développer</h3><p>Applications web et mobiles modernes.</p></div>
+  <div class="card big rv"><h3>Connecter</h3><p>Objets, capteurs, ESP32 et plateformes cloud.</p></div>
+  <div class="card big rv"><h3>Concevoir</h3><p>Architecture, bases de données, UML et interfaces.</p></div>
+  <div class="card big rv"><h3>Résoudre</h3><p>Transformer une problématique réelle en solution numérique.</p></div>
+ </div>
+</div></section>
+
+<section class="alt"><div class="wrap" style="text-align:center">
+ <div class="eyebrow rv">Code</div><h2 class="rv">Construisons quelque chose.</h2>
+ <p class="sub rv" style="margin:0 auto 26px">Retrouvez mon code et mes projets sur GitHub.</p>
+ <a class="btn p rv gh" href="#" target="_blank" rel="noopener">Voir mon GitHub</a>
+</div></section>
+
+<section id="contact"><div class="wrap two">
+ <div class="rv">
+  <div class="eyebrow">Contact</div><h2>Un projet ? Une opportunité ? Parlons-en.</h2>
+  <p class="sub" style="margin-bottom:24px">Je suis ouvert aux opportunités de stage, aux collaborations, aux projets technologiques et aux échanges autour du développement logiciel et de l'innovation.</p>
+  <div class="ct"><a class="gh" href="#" target="_blank" rel="noopener">GitHub</a><a id="li" href="#" target="_blank" rel="noopener">LinkedIn</a><a id="mail" href="#">Email</a></div>
+ </div>
+ <form class="rv" id="cf">
+  <input name="n" placeholder="Nom" aria-label="Nom" required>
+  <input name="e" type="email" placeholder="Email" aria-label="Email" required>
+  <input name="s" placeholder="Sujet" aria-label="Sujet" required>
+  <textarea name="m" placeholder="Message" aria-label="Message" required></textarea>
+  <button class="btn p" type="submit">Envoyer le message</button>
+ </form>
+</div></section>
+
+<footer><div class="wrap">
+ <b>NGOTIKI Emmanuel-andré</b>
+ Développeur Logiciel • Full-Stack • Mobile • IoT<br>Finaliste — CFI-CIRAS<br><br>© 2026 NGOTIKI Emmanuel-andré
+</div></footer>
+
+<script>
+/* ===== Données modifiables ===== */
+var CONFIG={github:"https://github.com/van-NG4",linkedin:"https://www.linkedin.com/in/emmanuel-andré-ngotiki-ab9269384",email:"ngotikiemmanuelandre@gmail.com",cv:"Black%20Modern%20Professional%20Resume-2.pdf"};
+var SKILLS={
+"Développement Web":["HTML5","CSS3","JavaScript","React","PHP","Full-Stack","API REST","Interfaces responsives"],
+"Développement Mobile":["React Native","Expo","TypeScript","Expo Router","NativeWind","Interfaces mobiles"],
+"IoT & systèmes embarqués":["ESP32","Arduino","Capteurs","Automatisation","Systèmes connectés","Wi-Fi","Collecte de données","Supervision"],
+"Bases de données":["Supabase","PostgreSQL","SQLite","Oracle","SQL","Conception BD"],
+"Conception logicielle":["UML","Merise","Architecture logicielle","Modélisation","Analyse fonctionnelle","Gestion de projet","Scrum"],
+"Outils":["Git","GitHub","Figma","VS Code","Antigravity","Google AI Studio"],
+"Systèmes & réseaux":["Administration Windows","Configuration réseau","Adressage IP","Cisco / notions réseau","Diagnostic système"]};
+var PROJECTS=[
+{n:"01",name:"Zoé Immo",url:"https://zoe2-one.vercel.app",cat:"Full-Stack Web • Immobilier",badge:"PROJET FULL-STACK",a:"#0f3b3a",a2:"#3ddc97",
+ desc:"Plateforme numérique de location immobilière adaptée au marché de la République du Congo, permettant de rechercher des logements, consulter leurs caractéristiques, vérifier leur disponibilité et effectuer une réservation.",
+ pb:"Trouver et réserver un logement reste difficile et peu structuré.",
+ sol:"Recherche avec filtres, géolocalisation, fiches immobilières, disponibilité, réservation, espaces client / propriétaire / administration, paiement simulé, architecture évolutive.",
+ tech:["React","Vite","Tailwind CSS","Supabase","JavaScript","Zod"],bars:[40,70,55,85,60,95]},
+{n:"02",name:"Smart Greenhouse",cat:"IoT • Agriculture • Automatisation",badge:"PROJET IoT",a:"#12364d",a2:"#38d5f0",
+ desc:"Système de serre agricole connectée permettant de surveiller et d'automatiser certaines conditions nécessaires à la croissance des plantes grâce à un ESP32 et différents capteurs.",
+ pb:"Suivre et arroser des cultures de façon régulière et maîtrisée.",
+ sol:"Mesure de la température, de l'humidité du sol et de l'air, irrigation automatique (pompe, relais), collecte des données et tableau de supervision.",
+ tech:["ESP32","IoT","React","Supabase","Capteurs","Automatisation"],bars:[55,50,65,60,75,70]},
+{n:"03",name:"CoastNest Watch",cat:"Environnement • IoT • Biodiversité",badge:"PROJET ENVIRONNEMENTAL",a:"#3a2a12",a2:"#f0b429",
+ desc:"Solution numérique dédiée à la protection des zones de reproduction des espèces côtières, avec un focus sur les tortues marines et l'impact potentiel de la pollution lumineuse.",
+ pb:"Les zones de ponte sont difficiles à surveiller (Pointe-Noire, Kouilou).",
+ sol:"Surveillance environnementale, mesure de la pollution lumineuse, collecte et visualisation des données, sensibilisation.",
+ tech:["IoT","ESP32","Capteurs","React","Supabase","Data Visualization"],bars:[30,45,80,90,60,35]},
+{n:"04",name:"E-Pharma",cat:"Application Desktop • Gestion pharmaceutique",badge:"APPLICATION DE GESTION",a:"#2a1f4a",a2:"#a78bfa",
+ desc:"Application de gestion destinée à une pharmacie afin de faciliter le suivi du stock, des produits, des dates d'expiration, des ventes et des informations de gestion.",
+ pb:"Stock, péremptions et ventes difficiles à suivre manuellement.",
+ sol:"Gestion du stock et des produits, alertes d'expiration, ventes, factures PDF, utilisateurs, tableau de bord et rapports.",
+ tech:["Python","CustomTkinter","SQLite","PDF"],bars:[80,60,90,45,70,55]}];
+var OTHERS=[["MamiWata Ocean Guardian","IoT / Océan / ESP32 / Supabase"],["OBARI","IoT / Gestion intelligente des déchets / ESP32 / Supabase"],["FuelTrack Congo","Application mobile / React Native / Expo"],["Diagnostic des plantes","Mobile / IA / Agriculture"],["Irrigation goutte-à-goutte","Automatisation / ESP32 / Agriculture"],["Plateforme ANVRI","Web / Innovation / Recherche / République du Congo"]];
+
+/* ===== Rendu ===== */
+var $=function(s){return document.querySelector(s)};
+$("#skillGrid").innerHTML=Object.keys(SKILLS).map(function(k){return '<div class="card rv"><h3>'+k+'</h3><div class="tags">'+SKILLS[k].map(function(t){return '<span class="tag">'+t+'</span>'}).join("")+'</div></div>'}).join("");
+$("#projList").innerHTML=PROJECTS.map(function(p){
+ return '<article class="card proj rv"><div class="mock" style="--a:'+p.a+';--a2:'+p.a2+'"><span class="pbadge">'+p.badge+'</span><div class="win"><div class="dots"><i></i><i></i><i></i></div><div class="row">'+p.bars.map(function(h){return '<i style="--h:'+h+'%"></i>'}).join("")+'</div><div class="kv"><span>'+p.name.toUpperCase()+'</span><span>● live</span></div><div class="ln"></div><div class="ln"></div></div></div>'+
+ '<div class="pbody"><span class="pnum">PROJET '+p.n+'</span><h3>'+p.name+'</h3><div class="cat">'+p.cat+'</div><p>'+p.desc+'</p><p><b>Problème :</b> '+p.pb+'</p><p><b>Solution :</b> '+p.sol+'</p><div class="tags">'+p.tech.map(function(t){return '<span class="tag">'+t+'</span>'}).join("")+'</div><div class="cta"><a class="btn p s" href="'+(p.url||'#projects')+'"'+(p.url?' target="_blank" rel="noopener"':'')+'>Voir le projet</a><a class="btn s gh" href="#" target="_blank" rel="noopener">GitHub</a></div></div></article>'}).join("");
+$("#others").innerHTML=OTHERS.map(function(o){return '<div class="card rv"><h3>'+o[0]+'</h3><p>'+o[1]+'</p></div>'}).join("");
+
+/* ===== Config liens ===== */
+document.querySelectorAll(".gh").forEach(function(a){a.href=CONFIG.github});
+document.querySelectorAll(".cv").forEach(function(a){a.href=CONFIG.cv;a.download="CV-Emmanuel-Andre-Ngotiki.pdf"});
+$("#li").href=CONFIG.linkedin;
+$("#mail").href=CONFIG.email?"mailto:"+CONFIG.email:"#contact";
+
+/* ===== Menu ===== */
+var bg=$("#burger"),lk=$("#links");
+bg.onclick=function(){var o=lk.classList.toggle("o");bg.classList.toggle("o",o);bg.setAttribute("aria-expanded",o)};
+lk.addEventListener("click",function(e){if(e.target.tagName==="A"){lk.classList.remove("o");bg.classList.remove("o")}});
+
+/* ===== Reveal + compteurs ===== */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
+document.querySelectorAll("[data-n]").forEach(function(el){var t=+el.dataset.n,i=0;var id=setInterval(function(){el.textContent=++i;if(i>=t)clearInterval(id)},260)});
+
+/* ===== Scroll : progression + timeline ===== */
+var st=$("#steps");
+addEventListener("scroll",function(){
+ var h=document.documentElement,sc=h.scrollTop/(h.scrollHeight-h.clientHeight);
+ $("#bar").style.width=(sc*100)+"%";
+ var r=st.getBoundingClientRect(),p=Math.min(1,Math.max(0,(innerHeight*.8-r.top)/(r.height+innerHeight*.2)));
+ st.style.setProperty("--p",(p*100)+"%");
+},{passive:true});
+
+/* ===== Curseur discret ===== */
+var cu=$("#cur");
+addEventListener("mousemove",function(e){cu.style.opacity=1;cu.style.left=(e.clientX-5)+"px";cu.style.top=(e.clientY-5)+"px"},{passive:true});
+document.querySelectorAll("a,button").forEach(function(el){el.addEventListener("mouseenter",function(){cu.style.transform="scale(2.4)"});el.addEventListener("mouseleave",function(){cu.style.transform="none"})});
+
+/* ===== Formulaire (ouvre le client mail si CONFIG.email est renseigné) ===== */
+$("#cf").onsubmit=function(e){e.preventDefault();var f=e.target;
+ if(!CONFIG.email){alert("Formulaire prêt : renseignez CONFIG.email dans le script pour activer l'envoi.");return}
+ location.href="mailto:"+CONFIG.email+"?subject="+encodeURIComponent(f.s.value)+"&body="+encodeURIComponent(f.m.value+"\n\n— "+f.n.value+" ("+f.e.value+")")};
+</script>
+</body>
+</html>
